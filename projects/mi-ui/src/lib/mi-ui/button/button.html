@@ -1,0 +1,15 @@
+<button
+  [attr.type]="type"
+  [class]="classes"
+  [disabled]="disabled || loading"
+  (click)="onClick($event)">
+  <ng-container *ngIf="loading">
+    <mi-icon name="Loader2" class="animate-spin w-4 h-4" [size]="16"></mi-icon>
+    <span>{{ loadingText }}</span>
+  </ng-container>
+  <ng-container *ngIf="!loading">
+    <mi-icon *ngIf="icon && iconPosition === 'left'" [name]="icon" class="w-4 h-4" [size]="16"></mi-icon>
+    <ng-content></ng-content>
+    <mi-icon *ngIf="icon && iconPosition === 'right'" [name]="icon" class="w-4 h-4" [size]="16"></mi-icon>
+  </ng-container>
+</button>

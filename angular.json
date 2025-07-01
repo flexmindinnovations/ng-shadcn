@@ -3,5 +3,67 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "mi-ui": {
+      "projectType": "library",
+      "root": "projects/mi-ui",
+      "sourceRoot": "projects/mi-ui/src",
+      "prefix": "mi",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mi-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/mi-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/mi-ui/tsconfig.spec.json"
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/mi-ui/.storybook",
+            "browserTarget": "mi-ui:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/mi-ui"
+            ],
+            "port": 6006,
+            "styles": [
+              "projects/mi-ui/src/styles.css"
+            ]
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/mi-ui/.storybook",
+            "browserTarget": "mi-ui:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/mi-ui"
+            ],
+            "outputDir": "storybook-static",
+            "styles": [
+              "projects/mi-ui/src/styles.css"
+            ]
+          }
+        }
+      }
+    }
   }
 }

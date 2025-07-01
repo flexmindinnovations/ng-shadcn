@@ -1,0 +1,21 @@
+/* Storybook specific styles */
+
+/* Ensure body has proper base styles */
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Storybook specific overrides */
+#storybook-root,
+.sb-main-padded {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Ensure proper default styling */
+* {
+  box-sizing: border-box;
+}

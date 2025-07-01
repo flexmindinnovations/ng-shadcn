@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.lib.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@/mi-ui/*": ["../src/lib/mi-ui/*"],
+      "@/components/*": ["../src/lib/mi-ui/*"],
+      "@/styles/*": ["../src/*"]
+    }
+  },
+  "exclude": ["../src/test.ts", "../src/**/*.spec.ts"],
+  "include": ["../src/**/*.stories.*", "./preview.ts"],
+  "files": ["./typings.d.ts"]
+}

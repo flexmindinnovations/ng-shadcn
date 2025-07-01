@@ -6,6 +6,13 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
+    "paths": {
+      "mi-ui": ["./dist/mi-ui"],
+      "@/mi-ui/*": ["./projects/mi-ui/src/lib/mi-ui/*"],
+      "@/components/*": ["projects/mi-ui/src/lib/mi-ui/*"],
+      "@/styles/*": ["./projects/mi-ui/src/*"],
+      "@/stories/*": ["./projects/mi-ui/src/stories/*"]
+    },
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
@@ -22,5 +29,13 @@
     "typeCheckHostBindings": true,
     "strictTemplates": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/mi-ui/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/mi-ui/tsconfig.spec.json"
+    }
+  ]
 }
