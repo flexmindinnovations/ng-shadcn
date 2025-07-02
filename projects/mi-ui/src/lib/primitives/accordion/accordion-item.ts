@@ -23,7 +23,7 @@ export interface AccordionChildComponent {
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     'class': 'block accordion-item',
-    'style': 'border-bottom: 1px solid hsl(214.3 31.8% 91.4%);',
+    '[style.border-bottom]': 'isLast ? "none" : "1px solid hsl(214.3 31.8% 91.4%)"',
     '[attr.data-state]': 'dataState',
     '[attr.data-disabled]': 'disabled ? "" : null'
   }
@@ -31,6 +31,7 @@ export interface AccordionChildComponent {
 export class AccordionItemComponent implements OnInit {
   @Input() value!: string;
   @Input() disabled = false;
+  @Input() isLast = false;
 
   private context?: AccordionContext;
   private childComponents: AccordionChildComponent[] = [];

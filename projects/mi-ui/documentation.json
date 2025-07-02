@@ -287,6 +287,26 @@
                 "defaultValue": "[\r\n  {\r\n    name: 'Suggestions',\r\n    items: [\r\n      { value: 'calendar', label: 'Calendar', icon: 'M8 2v4m8-4v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z' },\r\n      { value: 'search-emoji', label: 'Search Emoji', icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' },\r\n      { value: 'calculator', label: 'Calculator', icon: 'M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z' },\r\n    ]\r\n  },\r\n  {\r\n    name: 'Settings',\r\n    items: [\r\n      { value: 'profile', label: 'Profile', icon: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' },\r\n      { value: 'billing', label: 'Billing', icon: 'M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z' },\r\n      { value: 'settings', label: 'Settings', icon: 'M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z' },\r\n    ]\r\n  }\r\n]"
             },
             {
+                "name": "ComplexContent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    items: complexContentItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Accordion with rich HTML content and interactive elements.',\r\n      },\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "complexContentItems",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  {\r\n    value: 'complex-1',\r\n    trigger: 'Rich Content Example',\r\n    content: `\r\n      <div class=\"space-y-4\">\r\n        <p class=\"text-sm text-gray-600\">This accordion item contains rich HTML content:</p>\r\n        <ul class=\"list-disc list-inside space-y-1 text-sm\">\r\n          <li>Bullet points</li>\r\n          <li>Multiple paragraphs</li>\r\n          <li>Custom styling</li>\r\n        </ul>\r\n        <div class=\"mt-4 p-3 bg-gray-100 rounded-md\">\r\n          <p class=\"text-sm font-medium\">Code Example:</p>\r\n          <code class=\"text-xs\">const example = \"Hello World\";</code>\r\n        </div>\r\n      </div>\r\n    `,\r\n    contentClass: 'p-4'\r\n  },\r\n  {\r\n    value: 'complex-2',\r\n    trigger: 'Interactive Content',\r\n    content: `\r\n      <div class=\"space-y-3\">\r\n        <p>This content includes interactive elements:</p>\r\n        <button class=\"px-3 py-1 bg-blue-500 text-white rounded text-sm hover:bg-blue-600\">\r\n          Click me\r\n        </button>\r\n        <p class=\"text-sm text-gray-500\">Note: In a real app, you'd use proper Angular components for interactivity.</p>\r\n      </div>\r\n    `,\r\n    headerClass: 'bg-yellow-50',\r\n    contentClass: 'bg-yellow-25 p-4'\r\n  }\r\n]"
+            },
+            {
                 "name": "ConfirmationDialog",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -367,6 +387,26 @@
                 "defaultValue": "{\r\n  args: {\r\n    items: simpleItems,\r\n    placeholder: 'Search for commands...',\r\n    emptyMessage: 'No commands found. Try a different search term.',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <div class=\"w-80 h-64 border rounded-lg\">\r\n        <mi-command\r\n          [items]=\"items\"\r\n          [placeholder]=\"placeholder\"\r\n          [emptyMessage]=\"emptyMessage\"\r\n          (itemSelect)=\"onItemSelect($event)\">\r\n        </mi-command>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
+                "name": "customIconItems",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  {\r\n    value: 'icon-1',\r\n    trigger: 'Plus/Minus Icons',\r\n    content: 'This item uses plus and minus icons instead of chevrons.',\r\n    expandIcon: 'Minus',\r\n    collapseIcon: 'Plus'\r\n  },\r\n  {\r\n    value: 'icon-2',\r\n    trigger: 'Caret Icons',\r\n    content: 'This item uses caret icons for expand/collapse.',\r\n    expandIcon: 'CaretUp',\r\n    collapseIcon: 'CaretDown'\r\n  },\r\n  {\r\n    value: 'icon-3',\r\n    trigger: 'Arrow Icons', \r\n    content: 'This item uses arrow icons for a different look.',\r\n    expandIcon: 'ArrowUp',\r\n    collapseIcon: 'ArrowDown'\r\n  }\r\n]"
+            },
+            {
+                "name": "CustomIcons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    items: customIconItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Accordion items with custom expand/collapse icons.',\r\n      },\r\n    },\r\n  },\r\n}"
+            },
+            {
                 "name": "CustomSize",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -375,6 +415,26 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    name: 'Heart',\r\n    size: 32,\r\n    color: '#ef4444',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Icons can be customized with different sizes and colors.',\r\n      },\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "customStyledItems",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  {\r\n    value: 'styled-1',\r\n    trigger: 'Custom Header Style',\r\n    content: 'This item has custom header styling with blue colors.',\r\n    headerClass: 'bg-blue-50 text-blue-700 hover:bg-blue-100 border-blue-200',\r\n    contentClass: 'bg-blue-25 text-blue-800',\r\n    iconClass: 'text-blue-500'\r\n  },\r\n  {\r\n    value: 'styled-2',\r\n    trigger: 'Green Themed Item',\r\n    content: 'This item uses green theme colors for a different look.',\r\n    headerClass: 'bg-green-50 text-green-700 hover:bg-green-100',\r\n    contentClass: 'bg-green-25',\r\n    contentStyle: { backgroundColor: '#f0f9f0' }\r\n  },\r\n  {\r\n    value: 'styled-3',\r\n    trigger: 'Purple Accent',\r\n    content: 'Purple themed accordion item with custom styling.',\r\n    headerClass: 'bg-purple-50 text-purple-700 hover:bg-purple-100',\r\n    contentClass: 'bg-purple-25 p-6 rounded-lg'\r\n  }\r\n]"
+            },
+            {
+                "name": "CustomStyling",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    items: customStyledItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Accordion with custom header and content styling per item.',\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "DeepNavigation",
@@ -1587,6 +1647,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    isOpen: true,\r\n    side: 'right',\r\n    size: 'lg',\r\n    title: 'Product Details',\r\n    description: 'Detailed information about the selected product.',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <mi-sheet\r\n        [isOpen]=\"isOpen\"\r\n        [side]=\"side\"\r\n        [size]=\"size\"\r\n        [title]=\"title\"\r\n        [description]=\"description\">\r\n        <div class=\"space-y-6\">\r\n          <div class=\"aspect-video bg-muted rounded-lg flex items-center justify-center\">\r\n            <span class=\"text-muted-foreground\">Product Image</span>\r\n          </div>\r\n          <div class=\"space-y-4\">\r\n            <h3 class=\"text-lg font-semibold\">Premium Headphones</h3>\r\n            <p class=\"text-muted-foreground\">High-quality wireless headphones with noise cancellation and premium sound quality.</p>\r\n            <div class=\"flex items-center space-x-2\">\r\n              <span class=\"text-2xl font-bold\">$299.99</span>\r\n              <span class=\"text-sm text-muted-foreground line-through\">$399.99</span>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div slot=\"footer\" class=\"space-x-2\">\r\n          <button class=\"inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2\">\r\n            Add to Wishlist\r\n          </button>\r\n          <button class=\"inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2\">\r\n            Add to Cart\r\n          </button>\r\n        </div>\r\n      </mi-sheet>\r\n    `,\r\n  }),\r\n}"
             },
             {
+                "name": "LeftIconPosition",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    items: defaultItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    iconPosition: 'left',\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Accordion with icons positioned on the left side of the trigger.',\r\n      },\r\n    },\r\n  },\r\n}"
+            },
+            {
                 "name": "LeftSide",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2255,6 +2325,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    currentPage: 5,\r\n    totalPages: 10,\r\n    siblingCount: 1,\r\n    showFirstLast: true,\r\n    disabled: false,\r\n  },\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n      onPageChange: (page: number) => {\r\n        console.log('Page changed to:', page);\r\n        args.currentPage = page;\r\n      }\r\n    },\r\n    template: `\r\n      <mi-pagination\r\n        [currentPage]=\"currentPage\"\r\n        [totalPages]=\"totalPages\"\r\n        [siblingCount]=\"siblingCount\"\r\n        [showFirstLast]=\"showFirstLast\"\r\n        [disabled]=\"disabled\"\r\n        (pageChange)=\"onPageChange($event)\">\r\n      </mi-pagination>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
+                "name": "MixedConfiguration",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    items: [\r\n      {\r\n        value: 'mixed-1',\r\n        trigger: 'Default Styling',\r\n        content: 'This item uses default styling.'\r\n      },\r\n      {\r\n        value: 'mixed-2', \r\n        trigger: 'Custom Header',\r\n        content: 'This item has custom header styling.',\r\n        headerClass: 'bg-blue-50 text-blue-700'\r\n      },\r\n      {\r\n        value: 'mixed-3',\r\n        trigger: 'Custom Everything',\r\n        content: 'This item has custom styling for everything.',\r\n        headerClass: 'bg-green-50 text-green-700',\r\n        contentClass: 'bg-green-25 p-4',\r\n        expandIcon: 'Minus',\r\n        collapseIcon: 'Plus'\r\n      }\r\n    ],\r\n    type: 'single',\r\n    collapsible: true,\r\n    iconPosition: 'right',\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Accordion with mixed styling configurations per item.',\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "mixedItems",
@@ -5501,6 +5581,158 @@
                     "defaultValue": "{\r\n  args: {\r\n    groups: commandGroups,\r\n    placeholder: 'Select an option...',\r\n    showSearch: false,\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <div class=\"w-80 h-64 border rounded-lg\">\r\n        <mi-command\r\n          [groups]=\"groups\"\r\n          [placeholder]=\"placeholder\"\r\n          [showSearch]=\"showSearch\"\r\n          (itemSelect)=\"onItemSelect($event)\">\r\n        </mi-command>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
                 }
             ],
+            "projects/mi-ui/src/stories/accordion.stories.ts": [
+                {
+                    "name": "ComplexContent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    items: complexContentItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Accordion with rich HTML content and interactive elements.',\r\n      },\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "complexContentItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    value: 'complex-1',\r\n    trigger: 'Rich Content Example',\r\n    content: `\r\n      <div class=\"space-y-4\">\r\n        <p class=\"text-sm text-gray-600\">This accordion item contains rich HTML content:</p>\r\n        <ul class=\"list-disc list-inside space-y-1 text-sm\">\r\n          <li>Bullet points</li>\r\n          <li>Multiple paragraphs</li>\r\n          <li>Custom styling</li>\r\n        </ul>\r\n        <div class=\"mt-4 p-3 bg-gray-100 rounded-md\">\r\n          <p class=\"text-sm font-medium\">Code Example:</p>\r\n          <code class=\"text-xs\">const example = \"Hello World\";</code>\r\n        </div>\r\n      </div>\r\n    `,\r\n    contentClass: 'p-4'\r\n  },\r\n  {\r\n    value: 'complex-2',\r\n    trigger: 'Interactive Content',\r\n    content: `\r\n      <div class=\"space-y-3\">\r\n        <p>This content includes interactive elements:</p>\r\n        <button class=\"px-3 py-1 bg-blue-500 text-white rounded text-sm hover:bg-blue-600\">\r\n          Click me\r\n        </button>\r\n        <p class=\"text-sm text-gray-500\">Note: In a real app, you'd use proper Angular components for interactivity.</p>\r\n      </div>\r\n    `,\r\n    headerClass: 'bg-yellow-50',\r\n    contentClass: 'bg-yellow-25 p-4'\r\n  }\r\n]"
+                },
+                {
+                    "name": "customIconItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    value: 'icon-1',\r\n    trigger: 'Plus/Minus Icons',\r\n    content: 'This item uses plus and minus icons instead of chevrons.',\r\n    expandIcon: 'Minus',\r\n    collapseIcon: 'Plus'\r\n  },\r\n  {\r\n    value: 'icon-2',\r\n    trigger: 'Caret Icons',\r\n    content: 'This item uses caret icons for expand/collapse.',\r\n    expandIcon: 'CaretUp',\r\n    collapseIcon: 'CaretDown'\r\n  },\r\n  {\r\n    value: 'icon-3',\r\n    trigger: 'Arrow Icons', \r\n    content: 'This item uses arrow icons for a different look.',\r\n    expandIcon: 'ArrowUp',\r\n    collapseIcon: 'ArrowDown'\r\n  }\r\n]"
+                },
+                {
+                    "name": "CustomIcons",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    items: customIconItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Accordion items with custom expand/collapse icons.',\r\n      },\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "customStyledItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    value: 'styled-1',\r\n    trigger: 'Custom Header Style',\r\n    content: 'This item has custom header styling with blue colors.',\r\n    headerClass: 'bg-blue-50 text-blue-700 hover:bg-blue-100 border-blue-200',\r\n    contentClass: 'bg-blue-25 text-blue-800',\r\n    iconClass: 'text-blue-500'\r\n  },\r\n  {\r\n    value: 'styled-2',\r\n    trigger: 'Green Themed Item',\r\n    content: 'This item uses green theme colors for a different look.',\r\n    headerClass: 'bg-green-50 text-green-700 hover:bg-green-100',\r\n    contentClass: 'bg-green-25',\r\n    contentStyle: { backgroundColor: '#f0f9f0' }\r\n  },\r\n  {\r\n    value: 'styled-3',\r\n    trigger: 'Purple Accent',\r\n    content: 'Purple themed accordion item with custom styling.',\r\n    headerClass: 'bg-purple-50 text-purple-700 hover:bg-purple-100',\r\n    contentClass: 'bg-purple-25 p-6 rounded-lg'\r\n  }\r\n]"
+                },
+                {
+                    "name": "CustomStyling",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    items: customStyledItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Accordion with custom header and content styling per item.',\r\n      },\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    items: defaultItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    className: 'w-full',\r\n  },\r\n}"
+                },
+                {
+                    "name": "defaultItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    value: 'item-1',\r\n    trigger: 'Is it accessible?',\r\n    content: 'Yes. It adheres to the WAI-ARIA design pattern.',\r\n  },\r\n  {\r\n    value: 'item-2',\r\n    trigger: 'Is it styled?',\r\n    content: 'Yes. It comes with default styles that matches the other components aesthetic.',\r\n  },\r\n  {\r\n    value: 'item-3',\r\n    trigger: 'Is it animated?',\r\n    content: \"Yes. It's animated by default, but you can disable it if you prefer.\",\r\n  },\r\n]"
+                },
+                {
+                    "name": "LeftIconPosition",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    items: defaultItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    iconPosition: 'left',\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Accordion with icons positioned on the left side of the trigger.',\r\n      },\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AccordionComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Accordion',\r\n  component: AccordionComponent,\r\n  parameters: {\r\n    layout: 'centered',\r\n    docs: {\r\n      description: {\r\n        component: 'A collapsible content component that follows the shadcn/ui design system. Supports single and multiple selection modes.',\r\n      },\r\n    },\r\n  },\r\n  argTypes: {\r\n    type: {\r\n      control: 'select',\r\n      options: ['single', 'multiple'],\r\n      description: 'Whether to allow only one or multiple items to be open at once',\r\n    },\r\n    collapsible: {\r\n      control: 'boolean',\r\n      description: 'Whether items can be collapsed when in single mode',\r\n    },\r\n    className: {\r\n      control: 'text',\r\n      description: 'Additional CSS classes',\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "MixedConfiguration",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    items: [\r\n      {\r\n        value: 'mixed-1',\r\n        trigger: 'Default Styling',\r\n        content: 'This item uses default styling.'\r\n      },\r\n      {\r\n        value: 'mixed-2', \r\n        trigger: 'Custom Header',\r\n        content: 'This item has custom header styling.',\r\n        headerClass: 'bg-blue-50 text-blue-700'\r\n      },\r\n      {\r\n        value: 'mixed-3',\r\n        trigger: 'Custom Everything',\r\n        content: 'This item has custom styling for everything.',\r\n        headerClass: 'bg-green-50 text-green-700',\r\n        contentClass: 'bg-green-25 p-4',\r\n        expandIcon: 'Minus',\r\n        collapseIcon: 'Plus'\r\n      }\r\n    ],\r\n    type: 'single',\r\n    collapsible: true,\r\n    iconPosition: 'right',\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Accordion with mixed styling configurations per item.',\r\n      },\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "Multiple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    items: defaultItems,\r\n    type: 'multiple',\r\n    className: 'w-full',\r\n  },\r\n}"
+                },
+                {
+                    "name": "productItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    value: 'product-info',\r\n    trigger: 'Product Information',\r\n    content: `\r\n      <p>Our flagship product combines cutting-edge technology with sleek design. Built with premium materials, it offers unparalleled performance and reliability.</p>\r\n      <br>\r\n      <p>Key features include advanced processing capabilities, and an intuitive user interface designed for both beginners and experts.</p>\r\n    `,\r\n  },\r\n  {\r\n    value: 'shipping',\r\n    trigger: 'Shipping Details',\r\n    content: `\r\n      <p>We offer worldwide shipping through trusted courier partners. Standard delivery takes 3-5 business days, while express shipping ensures your order arrives within 1-2 business days.</p>\r\n      <br>\r\n      <p>Free shipping is available for orders over $50. All packages are carefully tracked and insured for your peace of mind.</p>\r\n    `,\r\n  },\r\n  {\r\n    value: 'return-policy',\r\n    trigger: 'Return Policy',\r\n    content: `\r\n      <p>We stand behind our products with a 30-day money-back guarantee. If you're not completely satisfied, you can return any item in its original condition for a full refund.</p>\r\n      <br>\r\n      <p>Returns are easy - just contact our customer service team and they'll provide a prepaid shipping label.</p>\r\n    `,\r\n  },\r\n]"
+                },
+                {
+                    "name": "ShadcnExample",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    items: productItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    defaultValue: 'product-info',\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Example that matches the official shadcn/ui accordion demo with product information.',\r\n      },\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "WithDefaultValue",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    items: defaultItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    defaultValue: 'item-1',\r\n    className: 'w-full',\r\n  },\r\n}"
+                }
+            ],
             "projects/mi-ui/src/stories/dialog.stories.ts": [
                 {
                     "name": "ConfirmationDialog",
@@ -5961,78 +6193,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args: {\r\n    items: [\r\n      { label: 'Home', href: '#' },\r\n      { label: 'Disabled Item', disabled: true },\r\n      { label: 'Components', href: '#' },\r\n      { label: 'Current Page' }\r\n    ]\r\n  }\r\n}"
-                }
-            ],
-            "projects/mi-ui/src/stories/accordion.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    items: defaultItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    className: 'w-full',\r\n  },\r\n}"
-                },
-                {
-                    "name": "defaultItems",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\r\n  {\r\n    value: 'item-1',\r\n    trigger: 'Is it accessible?',\r\n    content: 'Yes. It adheres to the WAI-ARIA design pattern.',\r\n  },\r\n  {\r\n    value: 'item-2',\r\n    trigger: 'Is it styled?',\r\n    content: 'Yes. It comes with default styles that matches the other components aesthetic.',\r\n  },\r\n  {\r\n    value: 'item-3',\r\n    trigger: 'Is it animated?',\r\n    content: \"Yes. It's animated by default, but you can disable it if you prefer.\",\r\n  },\r\n]"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<AccordionComponent>",
-                    "defaultValue": "{\r\n  title: 'Components/Accordion',\r\n  component: AccordionComponent,\r\n  parameters: {\r\n    layout: 'centered',\r\n    docs: {\r\n      description: {\r\n        component: 'A collapsible content component that follows the shadcn/ui design system. Supports single and multiple selection modes.',\r\n      },\r\n    },\r\n  },\r\n  argTypes: {\r\n    type: {\r\n      control: 'select',\r\n      options: ['single', 'multiple'],\r\n      description: 'Whether to allow only one or multiple items to be open at once',\r\n    },\r\n    collapsible: {\r\n      control: 'boolean',\r\n      description: 'Whether items can be collapsed when in single mode',\r\n    },\r\n    className: {\r\n      control: 'text',\r\n      description: 'Additional CSS classes',\r\n    },\r\n  },\r\n}"
-                },
-                {
-                    "name": "Multiple",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    items: defaultItems,\r\n    type: 'multiple',\r\n    className: 'w-full',\r\n  },\r\n}"
-                },
-                {
-                    "name": "productItems",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\r\n  {\r\n    value: 'product-info',\r\n    trigger: 'Product Information',\r\n    content: `\r\n      <p>Our flagship product combines cutting-edge technology with sleek design. Built with premium materials, it offers unparalleled performance and reliability.</p>\r\n      <br>\r\n      <p>Key features include advanced processing capabilities, and an intuitive user interface designed for both beginners and experts.</p>\r\n    `,\r\n  },\r\n  {\r\n    value: 'shipping',\r\n    trigger: 'Shipping Details',\r\n    content: `\r\n      <p>We offer worldwide shipping through trusted courier partners. Standard delivery takes 3-5 business days, while express shipping ensures your order arrives within 1-2 business days.</p>\r\n      <br>\r\n      <p>Free shipping is available for orders over $50. All packages are carefully tracked and insured for your peace of mind.</p>\r\n    `,\r\n  },\r\n  {\r\n    value: 'return-policy',\r\n    trigger: 'Return Policy',\r\n    content: `\r\n      <p>We stand behind our products with a 30-day money-back guarantee. If you're not completely satisfied, you can return any item in its original condition for a full refund.</p>\r\n      <br>\r\n      <p>Returns are easy - just contact our customer service team and they'll provide a prepaid shipping label.</p>\r\n    `,\r\n  },\r\n]"
-                },
-                {
-                    "name": "ShadcnExample",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    items: productItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    defaultValue: 'product-info',\r\n    className: 'w-full',\r\n  },\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        story: 'Example that matches the official shadcn/ui accordion demo with product information.',\r\n      },\r\n    },\r\n  },\r\n}"
-                },
-                {
-                    "name": "WithDefaultValue",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/mi-ui/src/stories/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    items: defaultItems,\r\n    type: 'single',\r\n    collapsible: true,\r\n    defaultValue: 'item-1',\r\n    className: 'w-full',\r\n  },\r\n}"
                 }
             ],
             "projects/mi-ui/src/stories/alert-dialog.stories.ts": [
@@ -8450,6 +8610,66 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "ComplexContent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "complexContentItems",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "customIconItems",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CustomIcons",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "customStyledItems",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CustomStyling",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -8470,7 +8690,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "LeftIconPosition",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/mi-ui/src/stories/accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MixedConfiguration",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
